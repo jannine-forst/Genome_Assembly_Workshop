@@ -1,0 +1,47 @@
+
+Found perl:
+   /usr/bin/perl
+   This is perl 5, version 18, subversion 2 (v5.18.2) built for darwin-thread-multi-2level
+
+Found java:
+   /usr/bin/java
+   java version "1.8.0_191"
+
+Found canu:
+   /Users/admin/canu/Darwin-amd64/bin/canu
+   Canu snapshot v1.7 +518 changes (r9210 22a2453af2eafd0109c9924b648e91711eb3c701)
+
+Running job 1 based on command line options.
+Initializing.
+Opening seqStore '../../ecoli.seqStore'.
+Correcting reads 1 to 12528.
+Reading 153650 corrections from './red.red'.
+Correcting 96342081 bases with 122215 indel adjustments.
+--Allocate 91 + 0 + 0 MB for bases, adjusts and reads.
+Corrected 96219868 bases with 18907 substitutions, 122214 deletions and 1 insertions.
+Loading overlaps.
+Read_Olaps()--  Loading 436714 overlaps from '../ecoli.ovlStore' for reads 1 to 12528
+--Allocate 13 MB for overlaps.
+Read_Olaps()--  Loaded 436714 overlaps -- 218584 normal and 218130 innie.
+Sorting overlaps.
+Recomputing overlaps.
+--Allocate 8 MB for fseq and rseq.
+--Allocate 32 MB for fadj and radj.
+--Allocate 16 MB for pedWorkArea_t.
+-- Allocate 0 MB for Edit_Array pointers.
+Recomputing overlaps -         1 -         1 -     12528--Allocate 16 MB for edit array work space 0 (positions 0-4092)
+Recomputing overlaps -         1 -      1025 -     12528Recomputing overlaps -         1 -      2049 -     12528Recomputing overlaps -         1 -      3073 -     12528Recomputing overlaps -         1 -      4097 -     12528Recomputing overlaps -         1 -      5121 -     12528Recomputing overlaps -         1 -      6145 -     12528Recomputing overlaps -         1 -      7169 -     12528Recomputing overlaps -         1 -      8193 -     12528Recomputing overlaps -         1 -      9217 -     12528Recomputing overlaps -         1 -     10241 -     12528Recomputing overlaps -         1 -     11265 -     12528Recomputing overlaps -         1 -     12289 -     12528
+--  Release bases, adjusts and reads.
+Olaps Fwd 218584
+Olaps Rev 218130
+Total:  436714
+Failed: 114 (both)
+Failed: 764 (either)
+Failed: 764 (match to end)
+Failed: 114 (negative length)
+rhaFail 380 rhaPass 217174
+Sorting overlaps.
+Saving corrected error rates to file ./00001.oea.WORKING
+--Allocate 0 MB for output error rates.
+
+Bye.

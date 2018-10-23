@@ -1,0 +1,14 @@
+Canu v1.7 (+518 commits) r9210 22a2453af2eafd0109c9924b648e91711eb3c701.
+
+Current Working Directory:
+/Users/admin/ecoli-pacbio/unitigging/3-overlapErrorAdjustment
+
+Command:
+/Users/admin/canu/Darwin-amd64/bin/findErrors \
+  -S ../../ecoli.seqStore \
+  -O ../ecoli.ovlStore \
+  -R 1 12528 \
+  -e 0.045 \
+  -l 500 \
+  -o ./00001.red.WORKING \
+  -t 4

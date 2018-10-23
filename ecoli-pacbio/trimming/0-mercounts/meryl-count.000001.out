@@ -1,0 +1,73 @@
+
+Found perl:
+   /usr/bin/perl
+   This is perl 5, version 18, subversion 2 (v5.18.2) built for darwin-thread-multi-2level
+
+Found java:
+   /usr/bin/java
+   java version "1.8.0_191"
+
+Found canu:
+   /Users/admin/canu/Darwin-amd64/bin/canu
+   Canu snapshot v1.7 +518 changes (r9210 22a2453af2eafd0109c9924b648e91711eb3c701)
+
+Running job 1 based on command line options.
+
+Counting 93  million canonical 22-mers from 1 input file:
+    canu-seqStore: ../../ecoli.seqStore
+
+
+SIMPLE MODE
+-----------
+
+  22-mers
+    -> 17592186044416 entries for counts up to 65535.
+    -> 256 Tbits memory used
+
+  97749589 input bases
+    -> expected max count of 390998, needing 4 extra bits.
+    -> 64 Tbits memory used
+
+  40 TB memory needed
+
+
+COMPLEX MODE
+------------
+
+prefix     # of   struct   kmers/    segs/     data    total
+  bits   prefix   memory   prefix   prefix   memory   memory
+------  -------  -------  -------  -------  -------  -------
+     1     2  P    62 kB    46 MM  4011  S   501 MB   501 MB
+     2     4  P    61 kB    23 MM  1959  S   489 MB   489 MB
+     3     8  P    60 kB    11 MM   957  S   478 MB   478 MB
+     4    16  P    59 kB  5966 kM   467  S   466 MB   466 MB
+     5    32  P    60 kB  2983 kM   228  S   455 MB   455 MB
+     6    64  P    61 kB  1491 kM   111  S   443 MB   443 MB
+     7   128  P    66 kB   745 kM    54  S   431 MB   431 MB
+     8   256  P    78 kB   372 kM    27  S   431 MB   431 MB
+     9   512  P   100 kB   186 kM    13  S   415 MB   415 MB
+    10  1024  P   152 kB    93 kM     7  S   447 MB   447 MB  Best Value!
+    11  2048  P   256 kB    46 kM     4  S   511 MB   512 MB
+    12  4096  P   448 kB    23 kM     2  S   511 MB   512 MB
+    13  8192  P   832 kB    11 kM     1  S   511 MB   512 MB
+    14    16 kP  1664 kB  5967  M     1  S  1023 MB  1025 MB
+    15    32 kP  3328 kB  2984  M     1  S  2047 MB  2050 MB
+
+
+FINAL CONFIGURATION
+-------------------
+
+Configured complex mode for 0.437 GB memory per batch, and up to 1 batch.
+
+kmerCountFileWriter()-- Creating './ecoli.01.meryl.WORKING' for 22-mers, with prefixSize 10 suffixSize 34 numFiles 64
+Loading kmers from '../../ecoli.seqStore' into buckets.
+Used 0.281 GB out of 2.000 GB to store         5954 kmers.
+Used 0.406 GB out of 2.000 GB to store     31942586 kmers.
+Used 0.531 GB out of 2.000 GB to store     63543756 kmers.
+Used 0.656 GB out of 2.000 GB to store     95144006 kmers.
+
+Writing results to './ecoli.01.meryl.WORKING', using 4 threads.
+finishIteration()--
+
+Finished counting.
+Bye.

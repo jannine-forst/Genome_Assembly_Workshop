@@ -1,0 +1,22 @@
+
+Starting file './ecoli.seqStore.ssi'.
+
+  Loading reads from '/Users/admin/canu/pacbio.fastq'
+    Processed 65620 lines.
+    Loaded 115899341 bp from:
+      13124 FASTQ format reads (115899341 bp).
+    WARNING: 596 reads (4.5413%) with 364443 bp (0.3135%) were too short (< 1000bp) and were ignored.
+
+Finished with:
+  0 warnings (bad base or qv, too short, too long)
+
+Loaded into store:
+  115899341 bp.
+  12528 reads.
+
+Skipped (too short):
+  364443 bp (0.3135%).
+  596 reads (4.5413%).
+
+
+sqStoreCreate finished successfully.
