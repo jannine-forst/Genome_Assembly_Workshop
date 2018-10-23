@@ -1,0 +1,116 @@
+-- Canu snapshot v1.7 +518 changes (r9210 22a2453af2eafd0109c9924b648e91711eb3c701)
+--
+-- CITATIONS
+--
+-- Koren S, Walenz BP, Berlin K, Miller JR, Phillippy AM.
+-- Canu: scalable and accurate long-read assembly via adaptive k-mer weighting and repeat separation.
+-- Genome Res. 2017 May;27(5):722-736.
+-- http://doi.org/10.1101/gr.215087.116
+-- 
+-- Koren S, Rhie A, Walenz BP, Dilthey AT, Bickhart DM, Kingan SB, Hiendleder S, Williams JL, Smith TPL, Phillippy AM.
+-- De novo assembly of haplotype-resolved genomes with trio binning.
+-- Nat Biotechnol. 2018
+-- https//doi.org/10.1038/nbt.4277
+-- 
+-- Read and contig alignments during correction, consensus and GFA building use:
+--   Šošic M, Šikic M.
+--   Edlib: a C/C ++ library for fast, exact sequence alignment using edit distance.
+--   Bioinformatics. 2017 May 1;33(9):1394-1395.
+--   http://doi.org/10.1093/bioinformatics/btw753
+-- 
+-- Overlaps are generated using:
+--   Berlin K, et al.
+--   Assembling large genomes with single-molecule sequencing and locality-sensitive hashing.
+--   Nat Biotechnol. 2015 Jun;33(6):623-30.
+--   http://doi.org/10.1038/nbt.3238
+-- 
+--   Myers EW, et al.
+--   A Whole-Genome Assembly of Drosophila.
+--   Science. 2000 Mar 24;287(5461):2196-204.
+--   http://doi.org/10.1126/science.287.5461.2196
+-- 
+-- Corrected read consensus sequences are generated using an algorithm derived from FALCON-sense:
+--   Chin CS, et al.
+--   Phased diploid genome assembly with single-molecule real-time sequencing.
+--   Nat Methods. 2016 Dec;13(12):1050-1054.
+--   http://doi.org/10.1038/nmeth.4035
+-- 
+-- Contig consensus sequences are generated using an algorithm derived from pbdagcon:
+--   Chin CS, et al.
+--   Nonhybrid, finished microbial genome assemblies from long-read SMRT sequencing data.
+--   Nat Methods. 2013 Jun;10(6):563-9
+--   http://doi.org/10.1038/nmeth.2474
+-- 
+-- CONFIGURE CANU
+--
+-- Detected Java(TM) Runtime Environment '1.8.0_191' (from 'java') with -d64 support.
+-- Detected gnuplot version '4.6 patchlevel 7   ' (from '/usr/local/opt/gnuplot@4/bin/gnuplot') and image format 'png'.
+-- Detected 8 CPUs and 16 gigabytes of memory.
+-- No grid engine detected, grid disabled.
+--
+--                            (tag)Concurrency
+--                     (tag)Threads          |
+--            (tag)Memory         |          |
+--        (tag)         |         |          |     total usage     algorithm
+--        -------  ------  --------   --------  -----------------  -----------------------------
+-- Local: meryl      8 GB    4 CPUs x   2 jobs    16 GB    8 CPUs  (k-mer counting)
+-- Local: hap        8 GB    4 CPUs x   2 jobs    16 GB    8 CPUs  (read-to-haplotype assignment)
+-- Local: cormhap    6 GB    8 CPUs x   1 job      6 GB    8 CPUs  (overlap detection with mhap)
+-- Local: obtovl     4 GB    8 CPUs x   1 job      4 GB    8 CPUs  (overlap detection)
+-- Local: utgovl     4 GB    8 CPUs x   1 job      4 GB    8 CPUs  (overlap detection)
+-- Local: ovb        4 GB    1 CPU  x   4 jobs    16 GB    4 CPUs  (overlap store bucketizer)
+-- Local: ovs        8 GB    1 CPU  x   2 jobs    16 GB    2 CPUs  (overlap store sorting)
+-- Local: red        8 GB    4 CPUs x   2 jobs    16 GB    8 CPUs  (read error detection)
+-- Local: oea        4 GB    1 CPU  x   4 jobs    16 GB    4 CPUs  (overlap error adjustment)
+-- Local: bat       16 GB    4 CPUs x   1 job     16 GB    4 CPUs  (contig construction with bogart)
+-- Local: gfa        8 GB    4 CPUs x   1 job      8 GB    4 CPUs  (GFA alignment and processing)
+--
+-- Found PacBio uncorrected reads in the input files.
+--
+-- Generating assembly 'ecoli' in '/Users/admin/canu/ecoli-pacbio-split'
+--
+-- Parameters:
+--
+--  genomeSize        4800000
+--
+--  Overlap Generation Limits:
+--    corOvlErrorRate 0.2400 ( 24.00%)
+--    obtOvlErrorRate 0.0450 (  4.50%)
+--    utgOvlErrorRate 0.0450 (  4.50%)
+--
+--  Overlap Processing Limits:
+--    corErrorRate    0.3000 ( 30.00%)
+--    obtErrorRate    0.0450 (  4.50%)
+--    utgErrorRate    0.0450 (  4.50%)
+--    cnsErrorRate    0.0750 (  7.50%)
+--
+--
+-- BEGIN CORRECTION
+--
+----------------------------------------
+-- Starting command on Mon Oct 22 20:48:11 2018 with 883.097 GB free disk space
+
+    cd .
+    /Users/admin/canu/Darwin-amd64/bin/sqStoreCreate \
+      -o ./ecoli.seqStore.BUILDING \
+      -minlength 1000 \
+      ./ecoli.seqStore.ssi \
+    > ./ecoli.seqStore.BUILDING.err 2>&1
+
+-- Finished on Mon Oct 22 20:48:11 2018 (fast as lightning) with 883.089 GB free disk space
+----------------------------------------
+--
+-- ERROR:  Read coverage (6.04) is too low to be useful.
+-- ERROR:
+-- ERROR:  This could be caused by an incorrect genomeSize or poor quality reads that could not
+-- ERROR:  be sufficiently corrected.
+-- ERROR:
+-- ERROR:  You can force Canu to continue by decreasing parameter stopOnLowCoverage=10,
+-- ERROR:  however, the quality of corrected reads and/or contiguity of contigs will be poor.
+-- 
+
+ABORT:
+ABORT: Canu snapshot v1.7 +518 changes (r9210 22a2453af2eafd0109c9924b648e91711eb3c701)
+ABORT: Don't panic, but a mostly harmless error occurred and Canu stopped.
+ABORT: Try restarting.  If that doesn't work, ask for help.
+ABORT:

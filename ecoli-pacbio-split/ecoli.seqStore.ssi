@@ -1,0 +1,7 @@
+########################################
+#  pacbio-raw: /Users/admin/canu/pacbio.25.fastq
+#
+name   pacbio.25
+preset pacbio-raw
+/Users/admin/canu/pacbio.25.fastq
+
